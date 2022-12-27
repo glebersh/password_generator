@@ -43,8 +43,35 @@ function createRegex() {
       regExp += '#$@_'
     }
   }
-  console.log(regExp + '\]*');
   return regExp + '\]*';
+};
+
+function setPasswordStrength() {
+  const checkboxs = document.querySelectorAll('.settings-checkbox:checked');
+  const strengthIndicators = document.querySelectorAll('.strength-indicator');
+
+  for (let indicator of strengthIndicators) {
+    indicator.style.backgroundColor = 'transparent';
+  }
+
+  if (slider.value >= 12 && checkboxs.length >= 3) {
+    for (let indicator of strengthIndicators) {
+      indicator.style.backgroundColor = 'var(--neon-green)';
+    }
+  }
+  else if (slider.value <= 12 && slider.value >= 9 && checkboxs.length >= 2) {
+    for (let i = 0; i < 2; i++) {
+      strengthIndicators[i].style.backgroundColor = 'var(--neon-green)';
+    }
+  }
+  else if (slider.value >= 6 && slider.value <= 9 && checkboxs.length >= 1) {
+    for (let i = 0; i < 1; i++) {
+      strengthIndicators[i].style.backgroundColor = 'var(--neon-green)';
+    }
+  }
+  else if (slider.value < 6 || !checkboxs.length) {
+    strengthIndicators[0].style.backgroundColor = 'var(--neon-green)';
+  }
 };
 
 function makePassword(event) {
@@ -60,6 +87,7 @@ function makePassword(event) {
     resultPassword += characters.charAt(Math.floor(Math.random() * characters.length));
   }
   document.querySelector('.password-input').value = resultPassword;
+  setPasswordStrength();
   return resultPassword;
 };
 
