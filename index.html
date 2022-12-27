@@ -30,17 +30,24 @@
       </div>
 
       <input type="range" class="password-length-slider" value="12" max="24">
-      <input type="checkbox" class="settings-checkbox" /> Include Uppercase Letters
-      <input type="checkbox" class="settings-checkbox" /> Inlude Numbers
-      <input type="checkbox" class="settings-checkbox" /> Include Symbols
-
+      <div class="flex flex-column">
+        <span>
+          <input type="checkbox" class="settings-checkbox"> Include Uppercase Letters
+        </span>
+        <span>
+          <input type="checkbox" class="settings-checkbox" /> Inlude Numbers
+        </span>
+        <span>
+          <input type="checkbox" class="settings-checkbox" /> Include Symbols
+        </span>
+      </div>
       <div class="flex">
         <h2>Strength</h2>
         <div class="flex">
-          <span class="strength-indicator"></span>
-          <span class="strength-indicator"></span>
-          <span class="strength-indicator"></span>
-          <span class="strength-indicator"></span>
+          <div class="strength-indicator"></div>
+          <div class="strength-indicator"></div>
+          <div class="strength-indicator"></div>
+          <div class="strength-indicator"></div>
         </div>
       </div>
       <label class="submit-label">

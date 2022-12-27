@@ -53,3 +53,44 @@ input[type='submit'] {
   color: black;
   font-size: 20px;
 }
+
+input[type='submit']:hover {
+  cursor: pointer;
+}
+
+input[type='range'] {
+  width: 50%;
+}
+
+.strength-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  border: 1px solid var(--pure-white);
+  margin-right: .5em;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.settings-checkbox {
+  margin-top: 2em;
+}
+
+span {
+  font-size: 24px;
+}
+
+h2 {
+  margin-top: 2em;
+}
