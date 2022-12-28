@@ -20,9 +20,18 @@ div {
   padding: 0;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 100px;
+}
+
 .main {
-  width: 38%;
-  margin: 10em auto 0;
+  width: 50%;
+  margin: 7em auto 0;
   height: 60vh;
   padding: 3em 0;
 }
@@ -38,9 +47,9 @@ div {
   outline: none;
   border: none;
   padding: 15px 12px;
-  width: 80%;
-  margin: 1.5em auto;
-  font-size: 2em;
+  width: 70%;
+  margin: 0 auto 0 0;
+  font-size: 20px;
   color: white;
   display: block;
 }
@@ -48,10 +57,11 @@ div {
 input[type='submit'] {
   padding: 10px 12px;
   width: 50%;
-  margin: 1.5em auto;
+  margin: 3em auto;
   background-color: var(--neon-green);
   color: black;
   font-size: 20px;
+  display: block;
 }
 
 input[type='submit']:hover {
@@ -59,6 +69,7 @@ input[type='submit']:hover {
 }
 
 input[type='range'] {
+  margin-top: 1em;
   width: 50%;
 }
 
@@ -81,6 +92,7 @@ input[type='range'] {
 .flex-column {
   align-items: flex-start;
   flex-direction: column;
+  margin-top: 3em;
 }
 
 .settings-checkbox {
@@ -93,4 +105,65 @@ span {
 
 h2 {
   margin-top: 2em;
+}
+
+.password-container {
+  height: 70px;
+  margin-top: 3em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clipboard-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.clipboard-icon:hover {
+  cursor: pointer;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  font-size: 20px;
+  margin-left: 1em;
+}
+
+.clipboard-container {
+  border: 1px solid var(--dark-grey);
+  min-width: 170px;
+  max-width: 170px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 13px 20px;
+}
+
+.range-input-container {
+  margin-top: 1.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+
+.header-link {
+  color: white;
+  font-size: 24px;
+  transition: 0.33s ease-in-out;
+  text-decoration: none;
+  margin-right: 1em;
+}
+
+.header-link:hover {
+  color: var(--neon-green);
 }

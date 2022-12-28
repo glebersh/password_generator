@@ -7,7 +7,7 @@ const settingsArray = [
 
 const slider = document.querySelector('.password-length-slider');
 const passwordLengthIndicator = document.querySelector('.password-length-indicator');
-
+const clipboardIcon = document.querySelector('.clipboard-icon');
 const checkboxButtons = document.querySelectorAll('.settings-checkbox');
 
 for (let i = 0; i < checkboxButtons.length; i++) {
@@ -19,7 +19,6 @@ for (let i = 0; i < checkboxButtons.length; i++) {
 slider.addEventListener('change', () => {
   passwordLengthIndicator.innerHTML = slider.value;
 });
-
 
 function createRegex() {
   let settings = settingsArray.map(item => item.value);
@@ -75,6 +74,7 @@ function setPasswordStrength() {
 };
 
 function makePassword(event) {
+  document.querySelector('.tooltip').innerHTML = 'Copy to clipboard';
   event.preventDefault();
   const regularExpression = new RegExp(createRegex(), "g");
 
@@ -88,6 +88,12 @@ function makePassword(event) {
   }
   document.querySelector('.password-input').value = resultPassword;
   setPasswordStrength();
+  clipboardIcon.src = 'svg/clipboard.svg';
   return resultPassword;
 };
 
+clipboardIcon.addEventListener('click', async () => {
+  await navigator.clipboard.writeText(document.querySelector('.password-input').value);
+  clipboardIcon.src = 'svg/clipboard-check.svg';
+  document.querySelector('.tooltip').innerHTML = 'Copied!';
+});

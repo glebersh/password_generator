@@ -13,23 +13,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
-
 </head>
+
+<header>
+  <h3>Contact:</h3>
+  <div>
+    <a href='https://github.com/glebersh' class='header-link' target='_blank' rel="noreferrer">
+      <i class="bi bi-github"></i>
+    </a>
+
+    <a href='https://www.linkedin.com/in/gleb-ershov-804b50232/' class='header-link' target='_blank' rel="noreferrer">
+      <i class="bi bi-linkedin"></i>
+    </a>
+
+    <a href='mailto:glebersh00@gmail.com' class='header-link' target='_blank' rel="noreferrer">
+      <i class="bi bi-mailbox"></i>
+    </a>
+
+    <a href='https://t.me/glebersh' class='header-link' target='_blank' rel="noreferrer">
+      <i class="bi bi-telegram"></i>
+    </a>
+  </div>
+</header>
 
 <body>
   <main class="main">
     <h1 class="form-title">Password generator</h1>
     <form class="form" onsubmit="makePassword(event)">
-      <label class="password-label">
+      <div class="password-container">
         <input type="'text" placeholder="P4$$W0rD!" class="password-input" disabled />
-      </label>
-      <div class="flex">
-        <span>Character length</span>
-        <span class="password-length-indicator">12</span>
+        <div class="clipboard-container">
+          <img src="svg/clipboard.svg" class="clipboard-icon">
+          <div class="tooltip">Copy to clipboard</div>
+        </div>
       </div>
-
-      <input type="range" class="password-length-slider" value="12" max="24">
+      <div style="margin-top: 3em">
+        <div class="flex">
+          <span>Character length</span>
+          <span class="password-length-indicator">12</span>
+        </div>
+      </div>
+      <div class="range-input-container">
+        <span>0</span>
+        <input type="range" class="password-length-slider" value="12" max="24">
+        <span>24</span>
+      </div>
       <div class="flex flex-column">
         <span>
           <input type="checkbox" class="settings-checkbox"> Include Uppercase Letters
@@ -50,9 +78,7 @@
           <div class="strength-indicator"></div>
         </div>
       </div>
-      <label class="submit-label">
-        <input type="submit" value="Generate"></input>
-      </label>
+      <input type="submit" value="Generate"></input>
     </form>
   </main>
   <script type="text/javascript" src="script.js"></script>
